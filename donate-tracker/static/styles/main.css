@@ -1,0 +1,79 @@
+body {
+    background: transparent !important;
+    margin: 0;
+    overflow: hidden;
+}
+
+.donation-box {
+    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+    color: #fff;
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px;
+    width: 350px;
+    font-family: 'Arial', sans-serif;
+    animation: slideIn 0.5s ease-out, glow 2s infinite alternate;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.donation-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 20px rgba(0, 255, 136, 0.3); }
+    to { box-shadow: 0 0 30px rgba(0, 255, 136, 0.5); }
+}
+
+@keyframes shine {
+    0% { transform: rotate(45deg) translate(-50%, -50%); }
+    100% { transform: rotate(45deg) translate(150%, 150%); }
+}
+
+.header {
+    font-size: 1.4em;
+    color: #00ff88;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.username {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #00ff88;
+    margin-bottom: 8px;
+}
+
+.amount {
+    font-size: 2em;
+    color: #ffd700;
+    margin: 15px 0;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.comment {
+    font-style: italic;
+    opacity: 0.9;
+    color: #aaa;
+    font-size: 0.9em;
+    border-left: 3px solid #00ff88;
+    padding-left: 10px;
+}
